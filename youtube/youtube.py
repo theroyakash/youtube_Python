@@ -24,11 +24,12 @@ soup = BeautifulSoup(plain_text, "html.parser")
 # fetches the url of the video
 songs = soup.findAll('div', {'class': 'yt-lockup-video'})
 song = songs[0].contents[0].contents[0].contents[0]
-# link = song['href']
-# webbrowser.open('https://www.youtube.com' + link)
 
 try:
     link = song['href']
     webbrowser.open('https://www.youtube.com' + link)
 except KeyError:
     print("Can't find any song,check your network or try a new word")
+
+    
+    
